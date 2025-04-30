@@ -1,7 +1,7 @@
 import random
 from Character import Character, characters  # Import Cahrcter lsit and Attributes
 from Enemy import Enemy, enemies, encounter_enemy  # Import enemy list and Attributes
-
+from Bosses import Boss, bosses # inport boss file
 # Player Selection
 print("Choose your Hero:")
 for i, char in enumerate(characters, 1):
@@ -38,9 +38,13 @@ zonemap = {
     }
 }
 
+fight_count = 0  # start counter for boss fight
+
 # Game Loop
 def start_game(player):
-    print(f"\nWelcome, {player.name}! Your journey begins in {player.location}.")
+    print(f"\nWelcome, {player.name}! Your journey begins.")
+
+    global fight_count
 
     while player.health > 0:
         print("\nActions: [move] [fight] [rest] [quit]")
@@ -49,8 +53,15 @@ def start_game(player):
         if action == "move":
             move_player(player)
         elif action == "fight":
-            enemy = random.choice(enemies)  
-            combat(player, enemy)
+            if fight_count < 5:
+                enemy = random.choice(enemies)
+                if combat(player, enemy):  # If player wins
+                    fight_count += 1
+            else:
+                boss = random.choice(bosses)  #  boss fight
+                print("\nA mighty boss approaches!")
+                combat(player, boss)
+                fight_count = 0  # Reset counter 
         elif action == "rest":
             player.health += 20
             print("\nYou rest and recover 20 health!")
@@ -60,9 +71,9 @@ def start_game(player):
         else:
             print("\nInvalid choice, try again.")
 
-    print("\nGame Over! You have failed your quest And died in Battle.")
+    print("\nGame Over! You have failed your quest and died in battle.")
 
-# Movement Function
+# Movement System
 def move_player(player):
     print("\nWhere Shall You go? [north] [south] [east] [west]")
     direction = input("Enter direction: ").lower()
@@ -80,7 +91,7 @@ def move_player(player):
 
     print(f"\nYou are now at {player.location}.")
 
-# Battle System
+# Combat System 
 def combat(player, enemy):
     print(f"\nA wild {enemy.name} appears! {enemy.bio}")
 
@@ -90,13 +101,13 @@ def combat(player, enemy):
         action = input("Attack or Defend? ").lower()
 
         if action == "attack":
-            damage = player.attack()  # FIXED: Ensure `Player.attack()` exists
+            damage = player.attack()
             enemy.take_damage(damage)
             print(f"\nYou strike {enemy.name} for {damage} damage!")
         
         if enemy.health > 0:
             enemy_damage = enemy.attack()
-            player.take_damage(enemy_damage)  # FIXED: Ensure `Player.take_damage()` exists
+            player.take_damage(enemy_damage)
             print(f"\n{enemy.name} retaliates for {enemy_damage} damage!")
 
         if player.health <= 0:
