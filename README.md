@@ -1,0 +1,19 @@
+User Documentation
+ 
+The information provided herein is developed for the Group One RPG project Dungeon of Fury. It is provided to be utilized as instruction and a fallback for setup and game play. The game itself is designed to be a single player text-based role play game. Where the user has the ability to use their imagination to dive deep into the realm of the unknown. By downloading the files provided, the game can be played via the command console or an IDE such as VsCode. If another is preferred the only requirement is the ability to interpret python files.
+​Information provided herein:
+• Installation instructions and requirements
+• Game Set up
+• Character Selection
+• Game play instructions
+• Commonly used prompts
+• FAQs
+• Character list
+• Enemy List
+• Boss Encounters
+To ensure optimal gameplay and a seamless experience with Dungeon of Fury, the following materials and resources are required: a functioning computer with Python 3.x installed, an IDE such as VS Code or an equivalent code editor capable of running Python scripts, and access to the full game folder including all .py files and assets provided by the development team. It is also recommended to have a basic understanding of Python and command line navigation, especially when executing the game via terminal. For an enhanced experience, headphones and a quiet setting are suggested to fully immerse the player in the text-based adventure. Optional but useful items include a notepad for tracking progress or strategies and access to the included documentation for character and boss references.
+Dungeon of Fury is coded entirely in Python and relies on basic libraries such as random and time, making it lightweight and easy to run across multiple platforms. The game architecture uses modular scripts for character definitions, combat mechanics, and enemy generation, allowing players or developers to modify or expand the game's content easily. Players interact through typed commands, which drive the turn-based combat and narrative progression. The built-in randomness ensures that each playthrough is unique, with varying enemy encounters, boss behaviors, and attack outcomes. Minimal system requirements and a text-based interface make it highly accessible, even for low-end systems or educational use.
+ 
+​The Group 1 RPG Project Dungeon of Fury is designed to give the user the retro vibes of an original text-based RPG and the flare of Mortal Combat. It is built for one player to select a hero and go on the quest to conquer the many enemies contained in the dungeon. Each Boss encountered opens a new level of the dungeon with carrying difficulty. All the while promoting a deep seeded want for more and an exponential growth of their imagination. The game is built in the widely known and accepted python language making IDE’s and system compatibility a breeze. With simple game play and great storylines, the user can really feel as if they are trudging through the dark cold cement walls themselves.
+​While the game at this time has a limited list of characters and only a select amount of levels, it is capable of modification for added difficulty and character extension packs. This allows it to become something customizable for each user. There would even be the ability to open source it and have people build their own characters and design levels.
+​Even with the small build the game is at this point the selection available allow for hours of gameplay fun. The randomized damage rolls and attack roles make it where each turn you have no idea what will happen. This is supplemented by the fact that the enemy encounters are also randomized, each having varying strengths and weaknesses. This adds to the degree of difficulty and preplanning that other games seem to lack.  We hope you enjoy playing as much as we enjoyed building this. Good Luck!
